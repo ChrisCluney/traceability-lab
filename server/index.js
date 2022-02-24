@@ -46,4 +46,9 @@ app.post('/api/student', (req, res)=>{
 app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4545
 
+app.get('/api/hi', (req, res) => {
+    res.status(200).send('Hi sent to rollbar')
+    rollbar.critical(wack = 'rollbar hi sent')
+})
+
 app.listen(port, () => console.log(`Take us to warp ${port}!`))
